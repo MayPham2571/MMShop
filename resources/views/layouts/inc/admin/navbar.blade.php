@@ -3,8 +3,7 @@
     <div class="navbar-brand-wrapper d-flex justify-content-center">
       <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
         <a class="navbar-brand brand-logo" href="index.html">
-            {{-- <img src="../../../admin/images/logo.svg" alt="logo" /></a> --}}
-            MM Shop
+          <img src="{{ asset('assets/MMAdmin.png') }}" style="height: 50px" alt="Logo">
         <a class="navbar-brand brand-logo-white" href="index.html"><img src="../../../admin/images/logo-white.svg"
             alt="logo" /></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../admin/images/logo-mini.svg"

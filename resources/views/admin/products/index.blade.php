@@ -39,7 +39,7 @@
 
                                 </td>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->selling_price }}</td>
+                                <td>{{ number_format($product->selling_price, 0, '.', ',') }} VND</td>
                                 <td>{{ $product->quantity }}</td>
                                 <td>{{ $product->status == '1' ? 'Hidden':'Visible' }}</td>
                                 <td>
