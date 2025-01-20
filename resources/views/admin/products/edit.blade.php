@@ -140,25 +140,41 @@
                                         <label for="">Original Price</label>
                                         <input type="text" name="original_price" value="{{ $product->original_price }}" class="form-control">
                                     </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="">Selling Price</label>
                                         <input type="text" name="selling_price" value="{{ $product->selling_price }}" class="form-control">
-                                    </div> 
                                     </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="">Quantity</label>
                                         <input type="number" name="quantity" value="{{ $product->quantity }}" class="form-control">
                                     </div> 
-                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="">Trending</label>
                                         <input type="checkbox" name="trending" {{ $product->trending == '1' ? 'checked':'' }} style="width: 50px; height: 50px;">
                                     </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="">Fetured</label>
+                                        <input type="checkbox" name="featured" {{ $product->featured == '1' ? 'checked':'' }} style="width: 50px; height: 50px;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="">Status</label>
                                         <input type="checkbox" name="status" {{ $product->status == '1' ? 'checked':'' }} style="width: 50px; height:50px;">
                                     </div>
                                 </div>
+                                     
+                                
+                                    
+                                
                             </div>
                         </div>
                         <div class="tab-pane fade border p-3" id="colors-tab-pane" role="tabpanel" tabindex="0">

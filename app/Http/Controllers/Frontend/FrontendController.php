@@ -12,9 +12,34 @@ class FrontendController extends Controller
 {
     public function index(){
 
+
         $sliders = Slider::where('status','0')->get();
         $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
-        return view('frontend.index',compact('sliders','trendingProducts'));
+        $newArrivalsProducts = Product::latest()->take(5)->get();
+        $featuredProducts = Product::where('featured','1')->latest()->get();
+        return view('frontend.index',compact('sliders','trendingProducts','newArrivalsProducts','featuredProducts'));
+    }
+
+    public function searchProducts(Request $request) {
+        if ($request->search) {
+            
+            $searchProducts = Product::where('name','LIKE','%'.$request->search.'')->latest()->paginate(10);
+            return view('frontend.pages.search',compact('searchProducts'));
+        }else{
+
+            return redirect()->back()->with('message','Empty Search');
+        }
+    }
+    public function newArrival(){
+
+        $newArrivalsProducts = Product::latest()->take(5)->get();
+        return view('frontend.pages.new-arrival', compact('newArrivalsProducts'));
+    }
+
+    public function featuredProducts(){
+
+        $featuredProducts = Product::where('featured','1')->latest()->get();
+        return view('frontend.pages.featured-products', compact('featuredProducts'));
     }
 
     public function categories() {

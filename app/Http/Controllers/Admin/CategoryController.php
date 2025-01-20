@@ -28,16 +28,19 @@ class CategoryController extends Controller
         $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
 
-        $uploadPath = '/uploads/category/';
-        if ($request->hasFile('image')){
+        $uploadPath = '/uploads/category/'.$category->image;
+        if ($request->hasFile('image')) {
+            $uploadPath = 'uploads/category/'; // Define upload directory
+        
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;
+            $filename = time() . '.' . $ext;
             $filename = preg_replace('/[^a-zA-Z0-9_.-]/', '', $filename);
-
-            $file->move('/uploads/category/', $filename);
-            $category->image = $uploadPath.$filename;
+        
+            $file->move(public_path($uploadPath), $filename); // Ensure the file is moved to the public directory
+            $category->image = $uploadPath . $filename; // Save relative path to database
         }
+        
 
         $category->meta_title = $validatedData['meta_title'];
         $category->meta_keyword = $validatedData['meta_keyword'];
@@ -72,9 +75,10 @@ class CategoryController extends Controller
 
             $path = 'uploads/category/'.$category->image;
 
-            if(File::exists($path)){
-                File::delete($path);
+            if (File::exists(public_path($category->image))) {
+                File::delete(public_path($category->image));
             }
+            
 
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();

@@ -115,23 +115,38 @@
                                         <label for="">Original Price</label>
                                         <input type="text" name="original_price" class="form-control">
                                     </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="">Selling Price</label>
                                         <input type="text" name="selling_price" class="form-control">
                                     </div>
+                                </div>
+                                <div class="col-md4">
                                     <div class="mb-3">
                                         <label for="">Quantity</label>
                                         <input type="number" name="quantity" class="form-control">
                                     </div>
+                                </div>
+                                <div class="col-md4">
                                     <div class="mb-3">
                                         <label for="">Trending</label>
-                                        <input type="checkbox" name="trending" style="width: 50px; height: 50px;">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="">Status</label>
-                                        <input type="checkbox" name="status" style="width: 50px; height:50px;">
+                                        <input type="checkbox" name="trending" >
                                     </div>
                                 </div>
+                                <div class="col-md4">
+                                    <div class="mb-3">
+                                        <label for="">Featured</label>
+                                        <input type="checkbox" name="featured" >
+                                    </div>
+                                </div>
+                                <div class="col-md4">
+                                    <div class="mb-3">
+                                        <label for="">Status</label>
+                                        <input type="checkbox" name="status" >
+                                    </div>
+                                </div>
+                                    
                             </div>
                         </div>
                         <div class="tab-pane fade border p-3" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">

@@ -3,14 +3,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block" href="{{ url('/') }}">
-                    
-                        <img src="{{ asset('assets/MMLogo.png') }}"  style="height: 50px" alt="Logo">
-                    
+                    <h5>
+                        <img src="{{ asset('assets/MMLogo.png') }}" style="height: 50px" alt="Logo">
+                    </h5>                
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form action="{{ url('search') }}" method="GET" role="search">
                         <div class="input-group">
-                            <input type="search" placeholder="Search your product" class="form-control" />
+                            <input type="search" name="search" value="{{ Request::get('search') }}" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
@@ -82,36 +82,26 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                    <li class="nav-item" style="margin-left:40px">
                         <a class="nav-link" href="{{ url('/') }}">Home</a>
-
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left:40px">
                         <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left:40px">
                         <a class="nav-link" href="{{ url('/new-arrivals') }}">New Arrivals</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Featured Products</a>
+                    <li class="nav-item" style="margin-left:40px">
+                        <a class="nav-link" href="{{ url('/featured-products') }}">Featured Products</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Electronics</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left:40px">
                         <a class="nav-link" href="#">Fashions</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left:40px">
                         <a class="nav-link" href="#">Accessories</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appliances</a>
-                    </li>
                 </ul>
             </div>
         </div>

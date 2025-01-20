@@ -114,15 +114,12 @@ class CartShow extends Component
     }
     public function getTotalPrice()
     {
-        // \Log::info('Selected Items:', $this->selectedItems);
-
         $this->totalPrice = Cart::whereIn('id', $this->selectedItems)
         ->with('product') // Load related product
         ->get()
         ->sum(function ($cartItem) {
             return $cartItem->product->selling_price * $cartItem->quantity;
         });
-        // \Log::info('Total Price Calculated: ' . $this->totalPrice);
     }
 
     public function updatedSelectedItems()

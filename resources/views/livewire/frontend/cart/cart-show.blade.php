@@ -83,14 +83,12 @@
                                                 <span wire:loading wire:target="removeCartItem({{ $cartItem->id }})">
                                                     <i class="fa fa-trash"></i> Removing
                                                 </span>
-    
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-md-1 col-2 my-auto">
                                         <div>
                                             <input type="checkbox" wire:model.lazy="selectedItems" value="{{ $cartItem->id }}">
-
                                         </div>
                                     </div>
                                 </div>

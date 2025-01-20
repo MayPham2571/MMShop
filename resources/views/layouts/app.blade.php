@@ -66,6 +66,10 @@
     </script>
 
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+
+
+
     @yield('script')
 
     @livewireStyles
