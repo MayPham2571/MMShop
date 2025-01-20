@@ -16,6 +16,7 @@ Open your terminal or command prompt and run the following command:
 git clone https://github.com/MayPham2571/MMShop.git
 
 _2.Navigate to the Project Folder_
+
 cd Ecommerce
 
 _3.Install Required Dependencies_
